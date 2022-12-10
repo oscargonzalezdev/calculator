@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="./src/app.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+        <table class="calculator">
+            <tr>
+              <td colspan="4">
+                <input class="displayer" type="text" id="result" disabled />
+              </td>
+            </tr>
+            <tr>
+              <td><input type="button" value="7" onclick="storeNumber('7')" /></td>
+              <td><input type="button" value="8" onclick="storeNumber('8')" /></td>
+              <td><input type="button" value="9" onclick="storeNumber('9')" /></td>
+              <td><input type="button" value="/" onclick="storeOperator('/')" /></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="4" onclick="storeNumber('4')" /></td>
+              <td><input type="button" value="5" onclick="storeNumber('5')" /></td>
+              <td><input type="button" value="6" onclick="storeNumber('6')" /></td>
+              <td><input type="button" value="-" onclick="storeOperator('-')" /></td>
+            </tr>
+            <tr>
+              <td><input type="button" value="1" onclick="storeNumber('1')" /></td>
+              <td><input type="button" value="2" onclick="storeNumber('2')" /></td>
+              <td><input type="button" value="3" onclick="storeNumber('3')" /></td>
+              <td><input type="button" value="+" onclick="storeOperator('+')" /></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" value="C" onclick="clearDisplay()" id="btn" />
+              </td>
+              <td><input type="button" value="0" onclick="storeNumber('0')" /></td>
+              <td>
+                <input type="button" value="." onclick="storeNumber('.')" />
+              </td>
+              <td><input type="button" value="*" onclick="storeOperator('*')" /></td>
+            </tr>
+            <tr>
+              <td colspan="4">
+                <input type="button" value="=" onclick="calculate()" id="btn" />
+              </td>
+            </tr>
+          </table>
+    </div>
+  </body>
+</html>

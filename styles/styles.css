@@ -39,11 +39,7 @@ html body {
     padding: 0 1rem ;
 }
 
-#btn {
-    background-color: #dfa72f;
-}
-
-input[type=button] {
+button {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
     background-color: #597cac;
@@ -56,11 +52,16 @@ input[type=button] {
     cursor: pointer;
 }
 
-input[value="="] {
-    border-radius: 40px;
+button[value="C"] {
+    background-color: #dfa72f;
 }
 
-input:active[type=button] {
+button[value="="] {
+    border-radius: 40px;
+    background-color: #dfa72f;
+}
+
+button:active {
     background: #e5e5e5;
     -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;

@@ -10,46 +10,47 @@
   </head>
   <body>
     <div class="container">
-        <table class="calculator">
-            <tr>
-              <td colspan="4">
-                <input class="displayer" type="text" id="result" disabled />
-              </td>
-            </tr>
-            <tr>
-              <td><input type="button" value="7" onclick="storeNumber('7')" /></td>
-              <td><input type="button" value="8" onclick="storeNumber('8')" /></td>
-              <td><input type="button" value="9" onclick="storeNumber('9')" /></td>
-              <td><input type="button" value="/" onclick="storeOperator('/')" /></td>
-            </tr>
-            <tr>
-              <td><input type="button" value="4" onclick="storeNumber('4')" /></td>
-              <td><input type="button" value="5" onclick="storeNumber('5')" /></td>
-              <td><input type="button" value="6" onclick="storeNumber('6')" /></td>
-              <td><input type="button" value="-" onclick="storeOperator('-')" /></td>
-            </tr>
-            <tr>
-              <td><input type="button" value="1" onclick="storeNumber('1')" /></td>
-              <td><input type="button" value="2" onclick="storeNumber('2')" /></td>
-              <td><input type="button" value="3" onclick="storeNumber('3')" /></td>
-              <td><input type="button" value="+" onclick="storeOperator('+')" /></td>
-            </tr>
-            <tr>
-              <td>
-                <input type="button" value="C" onclick="clearDisplay()" id="btn" />
-              </td>
-              <td><input type="button" value="0" onclick="storeNumber('0')" /></td>
-              <td>
-                <input type="button" value="." onclick="storeNumber('.')" />
-              </td>
-              <td><input type="button" value="*" onclick="storeOperator('*')" /></td>
-            </tr>
-            <tr>
-              <td colspan="4">
-                <input type="button" value="=" onclick="calculate()" id="btn" />
-              </td>
-            </tr>
-          </table>
+      <table class="calculator">
+        <tr>
+          <td colspan="4">
+            <input class="displayer" type="text" id="result" disabled />
+          </td>
+        </tr>
+        <tr>
+          <td><button value="7" onclick="storeNumber('7')">7</button></td>
+          <td><button value="8" onclick="storeNumber('8')">8</button></td>
+          <td><button value="9" onclick="storeNumber('9')">9</button></td>
+          <td><button value="/" onclick="storeOperator('/')">÷</button></td>
+        </tr>
+        <tr>
+          <td><button value="4" onclick="storeNumber('4')">4</button></td>
+          <td><button value="5" onclick="storeNumber('5')">5</button></td>
+          <td><button value="6" onclick="storeNumber('6')">6</button></td>
+          <td><button value="*" onclick="storeOperator('*')">x</button></td>
+        </tr>
+        <tr>
+          <td><button value="1" onclick="storeNumber('1')">1</button></td>
+          <td><button value="2" onclick="storeNumber('2')">2</button></td>
+          <td><button value="3" onclick="storeNumber('3')">3</button></td>
+          <td><button value="-" onclick="storeOperator('-')">-</button></td>
+        </tr>
+        <tr>
+          <td>
+            <button value="C" onclick="clearDisplay()">C</button>
+          </td>
+          <td><button value="0" onclick="storeNumber('0')">0</button></td>
+          <td>
+            <button value="." onclick="storeNumber('.')">.</button>
+          </td>
+
+          <td><button value="+" onclick="storeOperator('+')">+</button></td>
+        </tr>
+        <tr>
+          <td colspan="4">
+            <button value="=" onclick="calculate()" id="btn">=</button>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

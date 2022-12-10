@@ -1,8 +1,9 @@
 // global variables
-let firstNumber = 0
-let secondNumber = 0
-let operator = null
-let result = 0
+let firstNumber = ''
+let secondNumber = ''
+let operator = ''
+let result = ''
+let previousResult = ''
 
 // math operators
 function add(a, b) {
@@ -19,7 +20,9 @@ function divide(a, b) {
 }
 
 function operate(operator, a, b) {
-    console.log(a, operator, b)
+    if (operator === "/" && b === 0) {
+        return "ERROR"
+    }
     switch (operator) {
         case '+':
             return add(a, b);
@@ -34,22 +37,17 @@ function operate(operator, a, b) {
     }
 }
 
-console.log(operate('+', 1, 2));  // Output: 3
-console.log(operate('-', 3, 1));  // Output: 2
-console.log(operate('*', 2, 3));  // Output: 6
-console.log(operate('/', 6, 2));  // Output: 3
-
-
 function clearDisplay() {
-    document.getElementById("result").value = "";
-    firstNumber = 0
-    operator = null
-    secondNumber = 0
+    document.getElementById("result").value = ''
+    firstNumber = ''
+    operator = ''
+    secondNumber = ''
+    previousResult = ''
 }
 
 function storeNumber(value) {
-    const currentValue = document.getElementById("result").value += value;
-    if (!operator) {
+    const currentValue = document.getElementById("result").value += value
+    if (operator === '') {
         firstNumber = currentValue
     } else {
         secondNumber += value
@@ -57,11 +55,30 @@ function storeNumber(value) {
 }
 
 function storeOperator(value) {
-    document.getElementById("result").value += value;
-    operator = value
+    if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+        previousResult = operate(operator, Number(firstNumber), Number(secondNumber))
+        document.getElementById("result").value = previousResult
+        document.getElementById("result").value += value
+        firstNumber = previousResult
+        operator = value
+        secondNumber = ''
+    } else if (firstNumber === '') {
+        firstNumber = 0
+        operator = value
+        document.getElementById("result").value = 0;
+        document.getElementById("result").value += value;
+    } else {
+        operator = value
+        document.getElementById("result").value += value;
+    }
 }
 
 function calculate() {
-    result = operate(operator, Number(firstNumber), Number(secondNumber))
-    document.getElementById("result").value = result
+    if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+        result = operate(operator, Number(firstNumber), Number(secondNumber))
+        document.getElementById("result").value = result
+        firstNumber = result
+        operator = ''
+        secondNumber = ''
+    }
 }

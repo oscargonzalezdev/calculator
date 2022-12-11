@@ -17,33 +17,33 @@
           </td>
         </tr>
         <tr>
-          <td><button value="7" onclick="storeNumber('7')">7</button></td>
-          <td><button value="8" onclick="storeNumber('8')">8</button></td>
-          <td><button value="9" onclick="storeNumber('9')">9</button></td>
-          <td><button value="/" onclick="storeOperator('/')">÷</button></td>
+          <td><button value="7" onclick="handleNumber('7')">7</button></td>
+          <td><button value="8" onclick="handleNumber('8')">8</button></td>
+          <td><button value="9" onclick="handleNumber('9')">9</button></td>
+          <td><button value="/" onclick="handleOperator('/')">÷</button></td>
         </tr>
         <tr>
-          <td><button value="4" onclick="storeNumber('4')">4</button></td>
-          <td><button value="5" onclick="storeNumber('5')">5</button></td>
-          <td><button value="6" onclick="storeNumber('6')">6</button></td>
-          <td><button value="*" onclick="storeOperator('*')">x</button></td>
+          <td><button value="4" onclick="handleNumber('4')">4</button></td>
+          <td><button value="5" onclick="handleNumber('5')">5</button></td>
+          <td><button value="6" onclick="handleNumber('6')">6</button></td>
+          <td><button value="*" onclick="handleOperator('*')">x</button></td>
         </tr>
         <tr>
-          <td><button value="1" onclick="storeNumber('1')">1</button></td>
-          <td><button value="2" onclick="storeNumber('2')">2</button></td>
-          <td><button value="3" onclick="storeNumber('3')">3</button></td>
-          <td><button value="-" onclick="storeOperator('-')">-</button></td>
+          <td><button value="1" onclick="handleNumber('1')">1</button></td>
+          <td><button value="2" onclick="handleNumber('2')">2</button></td>
+          <td><button value="3" onclick="handleNumber('3')">3</button></td>
+          <td><button value="-" onclick="handleOperator('-')">-</button></td>
         </tr>
         <tr>
           <td>
             <button value="C" onclick="clearDisplay()">C</button>
           </td>
-          <td><button value="0" onclick="storeNumber('0')">0</button></td>
+          <td><button value="0" onclick="handleNumber('0')">0</button></td>
           <td>
-            <button value="." onclick="storeNumber('.')">.</button>
+            <button value="." onclick="handleNumber('.')">.</button>
           </td>
 
-          <td><button value="+" onclick="storeOperator('+')">+</button></td>
+          <td><button value="+" onclick="handleOperator('+')">+</button></td>
         </tr>
         <tr>
           <td colspan="4">
@@ -51,6 +51,26 @@
           </td>
         </tr>
       </table>
+      <footer>
+        <p>
+          Made with 🤍 by
+          <a
+            href="http://oscarweb.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Oscar Gonzalez
+          </a>
+          |
+          <a
+            href="https://github.com/oscargonzalezdev/calculator"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Code
+          </a>
+        </p>
+      </footer>
     </div>
   </body>
 </html>

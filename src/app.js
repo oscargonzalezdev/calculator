@@ -1,4 +1,5 @@
 // global variables
+const operators = ['+', '-', '*', '/']
 let firstNumber = ''
 let secondNumber = ''
 let operator = ''
@@ -37,48 +38,65 @@ function operate(operator, a, b) {
     }
 }
 
-function clearDisplay() {
-    document.getElementById("result").value = ''
-    firstNumber = ''
-    operator = ''
-    secondNumber = ''
-    previousResult = ''
-}
-
-function storeNumber(value) {
-    const currentValue = document.getElementById("result").value += value
-    if (operator === '') {
-        firstNumber = currentValue
+function handleNumber(number) {
+    result = document.getElementById("result").value
+    // avoid repeating points and zeros
+    if (
+        number === '.' && result.includes('.', result.length - 1) ||
+        number === '.' && result == '' ||
+        number === '.' && secondNumber == '' && firstNumber.includes('.') ||
+        number === '.' && secondNumber.includes('.') ||
+        number === '.' && operators.includes(result.charAt(result.length - 1)) ||
+        number === '0' && result.length === 1 && result.charAt(result.length - 1) === '0'
+    ) {
+        return
     } else {
-        secondNumber += value
+        result += number
+        document.getElementById("result").value = result
+        if (operator === '') {
+            firstNumber = result
+        } else {
+            secondNumber += number
+        }
     }
 }
 
-function storeOperator(value) {
-    if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
-        previousResult = operate(operator, Number(firstNumber), Number(secondNumber))
-        document.getElementById("result").value = previousResult
-        document.getElementById("result").value += value
-        firstNumber = previousResult
-        operator = value
-        secondNumber = ''
-    } else if (firstNumber === '') {
-        firstNumber = 0
-        operator = value
-        document.getElementById("result").value = 0;
-        document.getElementById("result").value += value;
-    } else {
-        operator = value
-        document.getElementById("result").value += value;
+function handleOperator(value) {
+    result = document.getElementById("result").value
+    if (result !== '') {
+        if (operators.includes(result.charAt(result.length - 1))) {
+            result = result.slice(0, -1)
+            document.getElementById("result").value = result
+        }
+        if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+            previousResult = operate(operator, Number(firstNumber), Number(secondNumber)).toString()
+            document.getElementById("result").value = previousResult
+            document.getElementById("result").value += value
+            firstNumber = previousResult
+            operator = value
+            secondNumber = ''
+        } else {
+            operator = value
+            document.getElementById("result").value += value;
+        }
     }
 }
 
 function calculate() {
     if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
-        result = operate(operator, Number(firstNumber), Number(secondNumber))
+        result = operate(operator, Number(firstNumber), Number(secondNumber)).toString()
         document.getElementById("result").value = result
         firstNumber = result
         operator = ''
         secondNumber = ''
     }
+}
+
+function clearDisplay() {
+    document.getElementById("result").value = ''
+    firstNumber = ''
+    secondNumber = ''
+    operator = ''
+    result = ''
+    previousResult = ''
 }

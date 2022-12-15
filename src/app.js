@@ -5,6 +5,8 @@ let secondNumber = ''
 let operator = ''
 let result = ''
 let previousResult = ''
+const currentResult = document.querySelector('.welcome')
+currentResult.classList.add('start')
 
 // math operators
 function add(a, b) {

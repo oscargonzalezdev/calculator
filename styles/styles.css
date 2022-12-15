@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=VT323&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@ a {
 
 html body {
     background: linear-gradient(to right bottom, #7c66a5eb, #4b9493eb) 50% fixed;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -20,30 +23,62 @@ html body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
     padding: 20px;
 }
 
 .calculator {
+    max-width: 400px;
+    height: fit-content;
     padding: 20px;
     border-radius: 15px;
-    height: 500px;
-    width: 450px;
     margin: auto;
     background-color: #222329;
-    box-shadow: 2px 2px 5px rgb(46, 46, 64);
+    box-shadow: 2px 2px 10px rgba(41, 41, 41, 0.627);
 }
 
 .displayer {
-    text-align: right;
-    font-size: 2rem;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
     background-color: #dcdbe1;
-    border: solid #222329 10px;
-    color: black;
-    border-radius: 5px;
+    color: #000;
     width: 100%;
-    height: 100%;
-    padding: 0 1rem;
+    text-align: right;
+}
+
+.display-container {
+    width: auto;
+    padding: 4px 10px;
+    position: relative;
+    font-family: 'VT323', monospace;
+    font-size: 3rem;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.welcome {
+    min-width: max-content;
+    display: inline;
+    height: 0;
+    position: absolute;
+    margin: auto;
+    transform: translateX(400px);
+    transition: transform 11s linear;
+    text-align: left;
+}
+
+.welcome.start {
+    transform: translateX(-100%);
+    transition: transform 11s linear;
+}
+
+.calculator tr td {
+    padding: 5px;
+}
+
+.calculator button,
+.calculator input {
+    border-radius: 10px;
 }
 
 button {
@@ -51,9 +86,9 @@ button {
     font-size: 2rem;
     background-color: #597cac;
     color: white;
-    border: solid #222329 10px;
+    border: none;
     width: 100%;
-    border-radius: 50%;
+    padding: 10px;
     height: 100%;
     outline: none;
     cursor: pointer;
@@ -69,17 +104,15 @@ button[value="="]:active {
     background-color: #f3cf81;
 }
 
-button[value="="] {
-    border-radius: 40px;
-}
-
 button:active {
     background: #98bef1;
 }
 
 footer {
-    font-size: 0.9rem;
+    width: 100%;
+    font-size: 0.8rem;
     color: #fff;
+    text-align: center;
 }
 
 footer a {
@@ -87,5 +120,5 @@ footer a {
 }
 
 footer a:hover {
-    color:#f3cf81;
+    color: #f3cf81;
 }

@@ -11,45 +11,50 @@
   <body>
     <div class="container">
       <table class="calculator">
-        <tr>
-          <td colspan="4">
-            <input class="displayer" type="text" id="result" disabled />
-          </td>
-        </tr>
-        <tr>
-          <td><button value="7" onclick="handleNumber('7')">7</button></td>
-          <td><button value="8" onclick="handleNumber('8')">8</button></td>
-          <td><button value="9" onclick="handleNumber('9')">9</button></td>
-          <td><button value="/" onclick="handleOperator('/')">÷</button></td>
-        </tr>
-        <tr>
-          <td><button value="4" onclick="handleNumber('4')">4</button></td>
-          <td><button value="5" onclick="handleNumber('5')">5</button></td>
-          <td><button value="6" onclick="handleNumber('6')">6</button></td>
-          <td><button value="*" onclick="handleOperator('*')">x</button></td>
-        </tr>
-        <tr>
-          <td><button value="1" onclick="handleNumber('1')">1</button></td>
-          <td><button value="2" onclick="handleNumber('2')">2</button></td>
-          <td><button value="3" onclick="handleNumber('3')">3</button></td>
-          <td><button value="-" onclick="handleOperator('-')">-</button></td>
-        </tr>
-        <tr>
-          <td>
-            <button value="C" onclick="clearDisplay()">C</button>
-          </td>
-          <td><button value="0" onclick="handleNumber('0')">0</button></td>
-          <td>
-            <button value="." onclick="handleNumber('.')">.</button>
-          </td>
+        <thead>
+          <tr>
+            <td colspan="4" class="display-container">
+              <div class="welcome">Welcome to calculator app. I will help you with the basic arithmetic calculations :)</div>
+              <input class="displayer" type="text" id="result" disabled />
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button value="7" onclick="handleNumber('7')">7</button></td>
+            <td><button value="8" onclick="handleNumber('8')">8</button></td>
+            <td><button value="9" onclick="handleNumber('9')">9</button></td>
+            <td><button value="/" onclick="handleOperator('/')">÷</button></td>
+          </tr>
+          <tr>
+            <td><button value="4" onclick="handleNumber('4')">4</button></td>
+            <td><button value="5" onclick="handleNumber('5')">5</button></td>
+            <td><button value="6" onclick="handleNumber('6')">6</button></td>
+            <td><button value="*" onclick="handleOperator('*')">x</button></td>
+          </tr>
+          <tr>
+            <td><button value="1" onclick="handleNumber('1')">1</button></td>
+            <td><button value="2" onclick="handleNumber('2')">2</button></td>
+            <td><button value="3" onclick="handleNumber('3')">3</button></td>
+            <td><button value="-" onclick="handleOperator('-')">-</button></td>
+          </tr>
+          <tr>
+            <td>
+              <button value="C" onclick="clearDisplay()">C</button>
+            </td>
+            <td><button value="0" onclick="handleNumber('0')">0</button></td>
+            <td>
+              <button value="." onclick="handleNumber('.')">.</button>
+            </td>
 
-          <td><button value="+" onclick="handleOperator('+')">+</button></td>
-        </tr>
-        <tr>
-          <td colspan="4">
-            <button value="=" onclick="calculate()" id="btn">=</button>
-          </td>
-        </tr>
+            <td><button value="+" onclick="handleOperator('+')">+</button></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <button value="=" onclick="calculate()" id="btn">=</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <footer>
         <p>
